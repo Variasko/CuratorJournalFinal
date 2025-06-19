@@ -1,0 +1,73 @@
+﻿<Window x:Class="CuratorJournal.Views.Windows.DormitoryEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Проживание в общежитии" 
+        Height="300" Width="400"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="#F0F2F5">
+
+    <Border Margin="10" CornerRadius="10" Background="White">
+        <Border.Effect>
+            <DropShadowEffect Color="LightGray" Opacity="0.3" BlurRadius="10"/>
+        </Border.Effect>
+
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Заголовок -->
+            <TextBlock Grid.Row="0" Text="Проживание в общежитии"
+                       FontSize="18" FontWeight="Bold"
+                       HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <!-- Студент (для добавления) -->
+            <ComboBox Grid.Row="1" 
+                      Name="StudentComboBox"
+                      materialDesign:HintAssist.Hint="Студент"
+                      Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                      Margin="0,0,0,10"/>
+
+            <!-- Студент (для редактирования) -->
+            <TextBox Grid.Row="1" 
+                     Name="StudentTextBox"
+                     materialDesign:HintAssist.Hint="Студент"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     IsReadOnly="True"
+                     Visibility="Collapsed"
+                     Margin="0,0,0,10"/>
+
+            <!-- Номер комнаты -->
+            <TextBox Grid.Row="2" 
+                     Name="RoomTextBox"
+                     materialDesign:HintAssist.Hint="Номер комнаты"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     Margin="0,0,0,20"/>
+
+            <!-- Кнопки -->
+            <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Name="SaveButton" 
+                        Content="Сохранить" 
+                        Width="120" Height="40"
+                        Click="SaveButton_Click" 
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        Margin="0,0,10,0"/>
+
+                <Button Name="CancelButton" 
+                        Content="Отмена" 
+                        Width="120" Height="40"
+                        Click="CancelButton_Click" 
+                        Style="{StaticResource MaterialDesignOutlinedButton}"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

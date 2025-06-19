@@ -1,0 +1,139 @@
+﻿<Window x:Class="CuratorJournal.Views.Windows.CuratorAddEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CuratorJournal.Views.Windows"
+        mc:Ignorable="d"
+        Title="Куратор" Height="650" Width="700" 
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="#F0F2F5">
+    <Border Background="White" CornerRadius="20" Margin="20">
+        <Border.Effect>
+            <DropShadowEffect Color="LightGray" Opacity="0.5" BlurRadius="20"/>
+        </Border.Effect>
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Фамилия -->
+            <TextBox Name="SurnameTextBox"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     md:HintAssist.Hint="Фамилия"
+                     VerticalAlignment="Center"
+                     Grid.Row="0"/>
+
+            <!-- Имя -->
+            <TextBox Name="NameTextBox"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     md:HintAssist.Hint="Имя"
+                     VerticalAlignment="Center"
+                     Grid.Row="1"/>
+
+            <!-- Отчество -->
+            <TextBox Name="PatronymicTextBox"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     md:HintAssist.Hint="Отчество"
+                     VerticalAlignment="Center"
+                     Grid.Row="2"/>
+
+            <!-- Паспорт -->
+            <TextBox Name="PassportTextBox"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     md:HintAssist.Hint="Паспорт (серия номер)"
+                     VerticalAlignment="Center"
+                     Grid.Row="3"/>
+
+            <!-- Кем выдан паспорт -->
+            <TextBox Name="WhoGavePassportTextBox"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     md:HintAssist.Hint="Кем выдан паспорт"
+                     VerticalAlignment="Center"
+                     Grid.Row="4"/>
+
+            <!-- Когда выдан паспорт -->
+            <DatePicker Name="WhenGetPassportPicker"
+                        VerticalAlignment="Center"
+                        md:HintAssist.Hint="Дата выдачи паспорта"
+                        Grid.Row="5"/>
+
+            <!-- ИНН -->
+            <TextBox Name="INNTextBox"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     md:HintAssist.Hint="ИНН"
+                     VerticalAlignment="Center"
+                     Grid.Row="6"/>
+
+            <!-- СНИЛС -->
+            <TextBox Name="SNILSTextBox"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     md:HintAssist.Hint="СНИЛС"
+                     VerticalAlignment="Center"
+                     Grid.Row="7"/>
+
+            <!-- Телефон -->
+            <TextBox Name="PhoneTextBox"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     md:HintAssist.Hint="Телефон"
+                     VerticalAlignment="Center"
+                     Grid.Row="8"/>
+
+            <!-- Email -->
+            <TextBox Name="EmailTextBox"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     md:HintAssist.Hint="Email"
+                     VerticalAlignment="Center"
+                     Grid.Row="9"/>
+
+            <!-- Категория преподавателя -->
+            <ComboBox Name="TeacherCategoryComboBox"
+                      ItemsSource="{Binding TeacherCategories}"
+                      DisplayMemberPath="Name"
+                      SelectedValuePath="CategoryId"
+                      VerticalAlignment="Center"
+                      md:HintAssist.Hint="Выберите категорию"
+                      Style="{StaticResource MaterialDesignComboBox}"
+                      Grid.Row="10"/>
+
+            <!-- Логин пользователя -->
+            <ComboBox Name="UserComboBox"
+                      ItemsSource="{Binding Users}"
+                      DisplayMemberPath="Login"
+                      SelectedValuePath="UserId"
+                      VerticalAlignment="Center"
+                      md:HintAssist.Hint="Выберите логин"
+                      Style="{StaticResource MaterialDesignComboBox}"
+                      Grid.Row="11"/>
+
+            <!-- Кнопки -->
+            <StackPanel Orientation="Horizontal" Grid.Row="12"
+                        HorizontalAlignment="Center"
+                        Margin="0,20,0,0">
+                <Button x:Name="SaveButton"
+                        Content="Сохранить"
+                        Margin="20 0"
+                        Click="SaveButton_Click"/>
+                <Button Name="CancelButton"
+                        Content="Отмена"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Margin="20 0"
+                        Click="CancelButton_Click"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

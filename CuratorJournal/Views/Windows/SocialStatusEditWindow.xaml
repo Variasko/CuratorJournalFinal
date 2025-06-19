@@ -1,0 +1,57 @@
+﻿<Window x:Class="CuratorJournal.Views.Windows.SocialStatusEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        mc:Ignorable="d"
+        Title="Редактирование социального статуса" 
+        Height="300" Width="400"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="#F0F2F5">
+
+    <Border Margin="10" CornerRadius="10" Background="White">
+        <Border.Effect>
+            <DropShadowEffect Color="LightGray" Opacity="0.3" BlurRadius="10"/>
+        </Border.Effect>
+
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Заголовок -->
+            <TextBlock Grid.Row="0" Text="Социальный статус студента"
+                       FontSize="18" FontWeight="Bold"
+                       HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <!-- Студент -->
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <TextBlock Text="Студент:" Width="120" VerticalAlignment="Center"/>
+                <ComboBox Name="StudentComboBox" Width="200"
+                          DisplayMemberPath="StudentFullName"/>
+            </StackPanel>
+
+            <!-- Социальный статус -->
+            <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBlock Text="Социальный статус:" Width="120" VerticalAlignment="Center"/>
+                <ComboBox Name="StatusComboBox" Width="200"
+                          DisplayMemberPath="Name"/>
+            </StackPanel>
+
+            <!-- Кнопки -->
+            <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+                <Button Name="SaveButton" Content="Сохранить" Width="100" Height="30"
+                        Click="SaveButton_Click"/>
+                <Button Name="CancelButton" Content="Отмена" Width="100" Height="30"
+                        Click="CancelButton_Click" Margin="10,0,0,0"
+                        Style="{StaticResource MaterialDesignOutlinedButton}"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fb7fe1ad8814421ebeef3f2c2288743d" Name="Diagram1">
+        <EntityTypeShape EntityType="CuratorJournalModel.ClassHour" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuratorJournalModel.Curator" Width="1.5" PointX="6" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuratorJournalModel.CuratorCharacteristic" Width="1.5" PointX="8.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuratorJournalModel.GroupPost" Width="1.5" PointX="3.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuratorJournalModel.Hobby" Width="1.5" PointX="3.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuratorJournalModel.IndividualWork" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuratorJournalModel.Parent" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuratorJournalModel.ParentMeeting" Width="1.5" PointX="13.5" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuratorJournalModel.Person" Width="1.5" PointX="3.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuratorJournalModel.Qualification" Width="1.5" PointX="9" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuratorJournalModel.SocialStatus" Width="1.5" PointX="3.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuratorJournalModel.Specification" Width="1.5" PointX="9" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuratorJournalModel.Student" Width="1.5" PointX="6" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuratorJournalModel.StudentClassHour" Width="1.5" PointX="8.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuratorJournalModel.StudentInDormitory" Width="1.5" PointX="8.25" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuratorJournalModel.StudyGroup" Width="1.5" PointX="11.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuratorJournalModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuratorJournalModel.TeacherCategory" Width="1.5" PointX="3.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuratorJournalModel.User" Width="1.5" PointX="3.75" PointY="21.375" IsExpanded="true" />
+        <AssociationConnector Association="CuratorJournalModel.FK__StudentCl__Class__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="CuratorJournalModel.FK__Curator__Categor__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="CuratorJournalModel.FK__Curator__PersonI__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="CuratorJournalModel.FK__Curator__UserId__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="CuratorJournalModel.FK__CuratorCh__Curat__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="CuratorJournalModel.FK_StudyGroup_Curator" ManuallyRouted="false" />
+        <AssociationConnector Association="CuratorJournalModel.FK__CuratorCh__Stude__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="CuratorJournalModel.FK__Individua__Paren__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="CuratorJournalModel.FK__Individua__Stude__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="CuratorJournalModel.FK__ParentMee__Study__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="CuratorJournalModel.FK__Student__Student__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="CuratorJournalModel.FK_StudyGroup_Qualification" ManuallyRouted="false" />
+        <AssociationConnector Association="CuratorJournalModel.FK_StudyGroup_Specification" ManuallyRouted="false" />
+        <AssociationConnector Association="CuratorJournalModel.FK__StudentCl__Stude__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="CuratorJournalModel.FK__StudentIn__Stude__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="CuratorJournalModel.StudentHobby" ManuallyRouted="false" />
+        <AssociationConnector Association="CuratorJournalModel.StudentParent" ManuallyRouted="false" />
+        <AssociationConnector Association="CuratorJournalModel.StudentSocialStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="CuratorJournalModel.StudentStudyGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="CuratorJournalModel.StudyGroupPost" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

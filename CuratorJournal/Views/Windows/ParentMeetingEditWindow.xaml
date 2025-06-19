@@ -1,0 +1,102 @@
+﻿<Window x:Class="CuratorJournal.Views.Windows.ParentMeetingEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        mc:Ignorable="d"
+        Title="Протокол родительского собрания" 
+        Height="550" Width="500"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="#F0F2F5">
+
+    <Border Margin="10" CornerRadius="10" Background="White">
+        <Border.Effect>
+            <DropShadowEffect Color="LightGray" Opacity="0.3" BlurRadius="10"/>
+        </Border.Effect>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Заголовок -->
+                <TextBlock Grid.Row="0" Text="Протокол родительского собрания"
+                           FontSize="18" FontWeight="Bold"
+                           HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+                <!-- Тема собрания -->
+                <TextBox Grid.Row="1" 
+                         materialDesign:HintAssist.Hint="Тема собрания"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         Name="TopicTextBox"
+                         Text="{Binding Topic, UpdateSourceTrigger=PropertyChanged}"
+                         Margin="0,0,0,10"/>
+
+                <!-- Решение собрания -->
+                <TextBox Grid.Row="3" 
+                         materialDesign:HintAssist.Hint="Решение собрания"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         Name="DecisionTextBox"
+                         Text="{Binding Decision, UpdateSourceTrigger=PropertyChanged}"
+                         Margin="0,0,0,10"
+                         AcceptsReturn="True"
+                         TextWrapping="Wrap"
+                         VerticalScrollBarVisibility="Auto"
+                         Height="80"/>
+
+                <!-- Посетило -->
+                <TextBox Grid.Row="4" 
+                         materialDesign:HintAssist.Hint="Количество посетивших"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         Name="VisitedTextBox"
+                         Text="{Binding Visited, UpdateSourceTrigger=PropertyChanged}"
+                         Margin="0,0,0,10"/>
+
+                <!-- Не посетило по уважительной причине -->
+                <TextBox Grid.Row="5" 
+                         materialDesign:HintAssist.Hint="Не посетило (уважительная причина)"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         Name="NotVisitedWithReasonTextBox"
+                         Text="{Binding NotVisitedWithReason, UpdateSourceTrigger=PropertyChanged}"
+                         Margin="0,0,0,10"/>
+
+                <!-- Не посетило без причины -->
+                <TextBox Grid.Row="6" 
+                         materialDesign:HintAssist.Hint="Не посетило (без причины)"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         Name="NotVisitedTextBox"
+                         Text="{Binding NotVisited, UpdateSourceTrigger=PropertyChanged}"
+                         Margin="0,0,0,20"/>
+
+                <!-- Кнопки -->
+                <StackPanel Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Name="SaveButton" 
+                            Content="Сохранить" 
+                            Width="120" Height="40"
+                            Click="SaveButton_Click" 
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                            Margin="0,0,10,0"/>
+
+                    <Button Name="CancelButton" 
+                            Content="Отмена" 
+                            Width="120" Height="40"
+                            Click="CancelButton_Click" 
+                            Style="{StaticResource MaterialDesignOutlinedButton}"/>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Border>
+</Window>

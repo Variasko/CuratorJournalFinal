@@ -1,0 +1,37 @@
+﻿<Page x:Class="CuratorJournal.Views.Pages.MainReferencePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="Справочники">
+    <Border Background="White" CornerRadius="20">
+        <Border.Effect>
+            <DropShadowEffect Color="LightGray" Opacity="0.5" BlurRadius="20"/>
+        </Border.Effect>
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Выберите справочник для работы:" FontSize="20" HorizontalAlignment="Center" Margin="0,10"/>
+
+            <WrapPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20">
+                <Button Content="Студенты" Width="200" Height="40" Margin="10" Click="OpenStudentPage"/>
+                <Button Content="Кураторы" Width="200" Height="40" Margin="10" Click="OpenCuratorPage"/>
+                <Button Content="Родители" Width="200" Height="40" Margin="10" Click="OpenParentPage"/>
+                <Button Content="Должности в группе" Width="200" Height="40" Margin="10" Click="OpenGroupPostPage"/>
+                <Button Content="Хобби" Width="200" Height="40" Margin="10" Click="OpenHobbyPage"/>
+                <Button Content="Квалификации" Width="200" Height="40" Margin="10" Click="OpenQualificationPage"/>
+                <Button Content="Специальности" Width="200" Height="40" Margin="10" Click="OpenSpecificationPage"/>
+                <Button Content="Группы" Width="200" Height="40" Margin="10" Click="OpenStudyGroupPage"/>
+                <Button Content="Социальный статус" Height="40" Margin="10" Click="OpenSocialStatusPage"/>
+                <Button Content="Категории преподавателей" Width="200" Height="40" Margin="10" Click="OpenTeacherCategoryPage"/>
+                <Button Content="Пользователи" Width="200" Height="40" Margin="10" Click="OpenUserPage"/>
+                <Button Content="Перевести группы на следующий курс" Height="40" Margin="10" Click="PromoteGroupsButton_Click"/>
+            </WrapPanel>
+        </Grid>
+    </Border>
+</Page>

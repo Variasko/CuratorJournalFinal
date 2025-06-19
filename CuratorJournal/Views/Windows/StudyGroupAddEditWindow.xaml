@@ -1,0 +1,92 @@
+﻿<Window x:Class="CuratorJournal.Views.Windows.StudyGroupAddEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CuratorJournal.Views.Windows"
+        mc:Ignorable="d"
+        Title="Учебная группа" Height="400" Width="600" 
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="#F0F2F5">
+    <Border Background="White" CornerRadius="20" Margin="20">
+        <Border.Effect>
+            <DropShadowEffect Color="LightGray" Opacity="0.5" BlurRadius="20"/>
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Специальность -->
+            <ComboBox Name="SpecificationComboBox"
+                      ItemsSource="{Binding Specifications}"
+                      DisplayMemberPath="Name"
+                      SelectedValuePath="Abbreviation"
+                      VerticalAlignment="Center"
+                      md:HintAssist.Hint="Выберите специальность"
+                      Style="{StaticResource MaterialDesignComboBox}"/>
+
+            <!-- Квалификация -->
+            <ComboBox Name="QualificationComboBox"
+                      ItemsSource="{Binding Qualifications}"
+                      DisplayMemberPath="Name"
+                      SelectedValuePath="Abbreviation"
+                      VerticalAlignment="Center"
+                      md:HintAssist.Hint="Выберите квалификацию"
+                      Style="{StaticResource MaterialDesignComboBox}"
+                      Grid.Row="1"/>
+
+            <!-- Дата создания -->
+            <DatePicker Name="DateCreatePicker"
+                        VerticalAlignment="Center"
+                        md:HintAssist.Hint="Дата создания"
+                        Grid.Row="2"
+                        SelectedDate="{Binding DateCreate, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <!-- Курс -->
+            <TextBox Name="CourseTextBox"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     md:HintAssist.Hint="Курс"
+                     Grid.Row="3"
+                     VerticalAlignment="Center"/>
+
+            <!-- Куратор -->
+            <ComboBox Name="CuratorComboBox"
+                      ItemsSource="{Binding CuratorsDto}"
+                      DisplayMemberPath="FullName"
+                      SelectedValuePath="CuratorId"
+                      VerticalAlignment="Center"
+                      md:HintAssist.Hint="Выберите куратора"
+                      Style="{StaticResource MaterialDesignComboBox}"
+                      Grid.Row="4"/>
+
+            <!-- Бюджетность -->
+            <CheckBox Name="IsBudgetCheckBox"
+                      Content="Бюджетная группа"
+                      Grid.Row="5"
+                      VerticalAlignment="Center"/>
+
+            <!-- Кнопки Сохранить/Отмена -->
+            <StackPanel Orientation="Horizontal" Grid.Row="6"
+                        HorizontalAlignment="Center">
+                <Button x:Name="SaveButton"
+                        Content="Сохранить"
+                        Margin="20 0"
+                        Click="SaveButton_Click"/>
+                <Button Name="CancelButton"
+                        Content="Отмена"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Margin="20 0"
+                        Click="CancelButton_Click"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,78 @@
+﻿<Window x:Class="CuratorJournal.Views.Windows.ClassHourEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Классный час" 
+        Height="400" Width="500"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="#F0F2F5">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Border Margin="10" CornerRadius="10" Background="White">
+            <Border.Effect>
+                <DropShadowEffect Color="LightGray" Opacity="0.3" BlurRadius="10"/>
+            </Border.Effect>
+
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Заголовок -->
+                <TextBlock Grid.Row="0" Text="Классный час"
+                           FontSize="18" FontWeight="Bold"
+                           HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+                <!-- Дата -->
+                <DatePicker Grid.Row="1" Name="DateDatePicker"
+                            materialDesign:HintAssist.Hint="Дата проведения"
+                            Style="{StaticResource MaterialDesignFloatingHintDatePicker}"
+                            Margin="0,0,0,10"/>
+
+                <!-- Тема -->
+                <TextBox Grid.Row="2" Name="TopicTextBox"
+                         materialDesign:HintAssist.Hint="Тема"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         Margin="0,0,0,10"/>
+
+                <!-- Решение -->
+                <TextBox Grid.Row="3" Name="DecisionTextBox"
+                         materialDesign:HintAssist.Hint="Решение"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         Margin="0,0,0,20"/>
+
+                <!-- Список студентов с CheckBox -->
+                <ItemsControl Grid.Row="4" Name="StudentsList" Margin="0,0,0,10">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="0,2">
+                                <CheckBox IsChecked="{Binding IsVisited}" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                                <TextBlock Text="{Binding StudentFullName}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <!-- Кнопки -->
+                <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Name="SaveButton" Content="Сохранить" Width="120" Height="40"
+                            Click="SaveButton_Click" 
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                            Margin="0,0,10,0"/>
+                    <Button Name="CancelButton" Content="Отмена" Width="120" Height="40"
+                            Click="CancelButton_Click" 
+                            Style="{StaticResource MaterialDesignOutlinedButton}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </ScrollViewer>
+</Window>

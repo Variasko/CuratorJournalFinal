@@ -1,0 +1,74 @@
+﻿<Window x:Class="CuratorJournal.Views.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CuratorJournal.Views.Windows"
+        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+
+        mc:Ignorable="d"
+        Title="Авторизация"
+
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+
+        Height="800"
+        Width="1200">
+
+    <Border Background="#DDD"
+            CornerRadius="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Name="ApplicationShutDownButton"
+                    Content="X"
+                    Grid.Column="1"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Right"
+                    Margin="20" Click="ApplicationShutDownButton_Click"/>
+
+            <Border Name="SideMenuBorder" Grid.Row="1"
+                    Background="White"
+                    CornerRadius="20"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Margin="20">
+
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <fa:ImageAwesome Icon="User" Style="{StaticResource SideMenu}" MouseDown="Profile_MouseDown"/>
+                        <fa:ImageAwesome Icon="Bullhorn" Style="{StaticResource SideMenu}" MouseDown="ActivistImage_MouseDown"/>
+                        <fa:ImageAwesome Icon="AddressBookOutline" Style="{StaticResource SideMenu}" MouseDown="SocialPassportImage_MouseDown"/>
+                        <fa:ImageAwesome Icon="CommentsOutline" Style="{StaticResource SideMenu}" MouseDown="PatentMetengImage_MouseDown"/>
+                        <fa:ImageAwesome Icon="BuildingOutline" Style="{StaticResource SideMenu}" MouseDown="DormitoryImage_MouseDown"/>
+                        <fa:ImageAwesome Icon="ClockOutline" Style="{StaticResource SideMenu}" MouseDown="ClassHourImage_MouseDown"/>
+                        <fa:ImageAwesome Icon="Gamepad" Style="{StaticResource SideMenu}" MouseDown="HobbyImage_MouseDown"/>
+                        <fa:ImageAwesome Icon="Bars" Style="{StaticResource SideMenu}" MouseDown="CharacteriasticImage_MouseDown"/>
+                        <fa:ImageAwesome Icon="Users" Style="{StaticResource SideMenu}" MouseDown="IndividualWorkImage_MouseDown"/>
+                        <fa:ImageAwesome Icon="FilesOutline" Style="{StaticResource SideMenu}" MouseDown="ReportImage_MouseDown"/>
+                        <fa:ImageAwesome Name="AdminOnly" Icon="AddressBook" Style="{StaticResource SideMenu}" MouseDown="ImageAwesome_MouseDown"/>
+                    </StackPanel>
+                </ScrollViewer>
+
+            </Border>
+
+            <Frame Name="MainFrame"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   Margin="20"
+                   NavigationUIVisibility="Hidden"/>
+
+        </Grid>
+    </Border>
+</Window>
