@@ -45,19 +45,65 @@
                     HorizontalAlignment="Center"
                     Margin="20">
 
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <ScrollViewer VerticalScrollBarVisibility="Hidden">
                     <StackPanel>
-                        <fa:ImageAwesome Icon="User" Style="{StaticResource SideMenu}" MouseDown="Profile_MouseDown"/>
-                        <fa:ImageAwesome Icon="Bullhorn" Style="{StaticResource SideMenu}" MouseDown="ActivistImage_MouseDown"/>
-                        <fa:ImageAwesome Icon="AddressBookOutline" Style="{StaticResource SideMenu}" MouseDown="SocialPassportImage_MouseDown"/>
-                        <fa:ImageAwesome Icon="CommentsOutline" Style="{StaticResource SideMenu}" MouseDown="PatentMetengImage_MouseDown"/>
-                        <fa:ImageAwesome Icon="BuildingOutline" Style="{StaticResource SideMenu}" MouseDown="DormitoryImage_MouseDown"/>
-                        <fa:ImageAwesome Icon="ClockOutline" Style="{StaticResource SideMenu}" MouseDown="ClassHourImage_MouseDown"/>
-                        <fa:ImageAwesome Icon="Gamepad" Style="{StaticResource SideMenu}" MouseDown="HobbyImage_MouseDown"/>
-                        <fa:ImageAwesome Icon="Bars" Style="{StaticResource SideMenu}" MouseDown="CharacteriasticImage_MouseDown"/>
-                        <fa:ImageAwesome Icon="Users" Style="{StaticResource SideMenu}" MouseDown="IndividualWorkImage_MouseDown"/>
-                        <fa:ImageAwesome Icon="FilesOutline" Style="{StaticResource SideMenu}" MouseDown="ReportImage_MouseDown"/>
-                        <fa:ImageAwesome Name="AdminOnly" Icon="AddressBook" Style="{StaticResource SideMenu}" MouseDown="ImageAwesome_MouseDown"/>
+                        <StackPanel>
+                            <fa:ImageAwesome Icon="User" 
+                                             Style="{StaticResource SideMenu}" 
+                                             MouseDown="Profile_MouseDown"
+                                             ToolTip="Профиль"/>
+
+                            <fa:ImageAwesome Icon="Bullhorn" 
+                                             Style="{StaticResource SideMenu}" 
+                                             MouseDown="ActivistImage_MouseDown"
+                                             ToolTip="Активисты"/>
+
+                            <fa:ImageAwesome Icon="AddressBookOutline" 
+                                             Style="{StaticResource SideMenu}" 
+                                             MouseDown="SocialPassportImage_MouseDown"
+                                             ToolTip="Социальный паспорт"/>
+
+                            <fa:ImageAwesome Icon="CommentsOutline" 
+                                             Style="{StaticResource SideMenu}" 
+                                             MouseDown="PatentMetengImage_MouseDown"
+                                             ToolTip="Родительские собрания"/>
+
+                            <fa:ImageAwesome Icon="BuildingOutline" 
+                                             Style="{StaticResource SideMenu}" 
+                                             MouseDown="DormitoryImage_MouseDown"
+                                             ToolTip="Студенты из общежития"/>
+
+                            <fa:ImageAwesome Icon="ClockOutline" 
+                                             Style="{StaticResource SideMenu}" 
+                                             MouseDown="ClassHourImage_MouseDown"
+                                             ToolTip="Посещаемость классных часов"/>
+
+                            <fa:ImageAwesome Icon="Gamepad" 
+                                             Style="{StaticResource SideMenu}" 
+                                             MouseDown="HobbyImage_MouseDown"
+                                             ToolTip="Внеучебная занятость студентов"/>
+
+                            <fa:ImageAwesome Icon="Bars" 
+                                             Style="{StaticResource SideMenu}" 
+                                             MouseDown="CharacteriasticImage_MouseDown"
+                                             ToolTip="Лист наблюдений куратора"/>
+
+                            <fa:ImageAwesome Icon="Users" 
+                                             Style="{StaticResource SideMenu}" 
+                                             MouseDown="IndividualWorkImage_MouseDown"
+                                             ToolTip="Индивидуальная работа"/>
+
+                            <fa:ImageAwesome Icon="FilesOutline" 
+                                             Style="{StaticResource SideMenu}" 
+                                             MouseDown="ReportImage_MouseDown"
+                                             ToolTip="Отчёты"/>
+
+                            <fa:ImageAwesome Name="AdminOnly" 
+                                             Icon="UserPlus" 
+                                             Style="{StaticResource SideMenu}" 
+                                             MouseDown="ImageAwesome_MouseDown"
+                                             ToolTip="Манипуляция данными"/>
+                        </StackPanel>
                     </StackPanel>
                 </ScrollViewer>
 
