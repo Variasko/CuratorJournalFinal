@@ -18,7 +18,14 @@ namespace CuratorJournal.Views.Windows
         public SignInWindow()
         {
             InitializeComponent();
-            var test = _db.Curator.ToList();
+            try
+            {
+                var test = _db.Curator.ToList();
+            } catch (Exception ex)
+            {
+                _messageBoxHelper.ShowError("Ошибка подключения к серверу!\nОбратитесь к системному администратору!");
+            }
+            
         }
 
         private async void SignInButton_Click(object sender, RoutedEventArgs e)
