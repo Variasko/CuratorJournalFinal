@@ -94,5 +94,10 @@ namespace CuratorJournal.Views.Windows
         {
             _currentPage = new MainReferencePage();
         }
+
+        private void ApplicationMinimizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using CuratorJournal.DataBase;
 using CuratorJournal.Helpers;
 using CuratorJournal.Session;
+using System;
 using System.Data.Entity; // Для асинхронных методов EF6
 using System.Linq;
 using System.Text;
@@ -18,7 +19,15 @@ namespace CuratorJournal.Views.Windows
         public SignInWindow()
         {
             InitializeComponent();
-            var test = _db.Curator.ToList();
+            try
+            {
+                var test = _db.Curator.ToList();
+            }
+            catch (Exception ex)
+            {
+                _messageBoxHelper.ShowError("Возникла ошибка при соединении с сервером!" +
+                    "\nОбратитесь к системному администратору для деталей!");
+            }
         }
 
         private async void SignInButton_Click(object sender, RoutedEventArgs e)
@@ -112,6 +121,11 @@ namespace CuratorJournal.Views.Windows
         private void ApplicationShutDownButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void ApplicationMinimizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
         }
     }
 }

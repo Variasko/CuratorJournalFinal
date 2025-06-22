@@ -22,6 +22,13 @@
 
         <Grid>
 
+            <Button Name="ApplicationMinimizeButton"
+                    Content="_"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Right"
+                    Margin="70 20"
+                    Click="ApplicationMinimizeButton_Click"/>
+
             <Button Name="ApplicationShutDownButton"
                     Content="X"
                     VerticalAlignment="Top"
