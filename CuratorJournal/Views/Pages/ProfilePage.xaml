@@ -19,10 +19,12 @@
 
         <StackPanel>
 
-            <fa:ImageAwesome Icon="UserCircle"
-                             Height="150"
-                             Margin="0 50"
-                             HorizontalAlignment="Center"/>
+            <Image Name="ProfileImage"
+                   Source="/Resourses/user-circle.png"
+                   Height="100"
+                   Margin="0 20"
+                   HorizontalAlignment="Center"
+                   MouseDown="ImageAwesome_MouseDown_1"/>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock Name="SurnameTextBox" Margin="5 10" FontSize="25" Text="{Binding Path=Sourse.Person.Surname, Source={x:Static cs:CurrentSession.CurrentCurator}}"/>
