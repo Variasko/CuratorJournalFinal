@@ -356,6 +356,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Resourses\bg_for_avatar.png" />
     <Resource Include="Resourses\user-circle.png" />
     <Resource Include="Resourses\icon.ico" />
     <EmbeddedResource Include="Properties\Resources.resx">

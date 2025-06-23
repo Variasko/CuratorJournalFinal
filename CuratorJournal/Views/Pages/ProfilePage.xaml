@@ -17,34 +17,57 @@
             <DropShadowEffect Color="LightGray" Opacity="0.5" BlurRadius="20"/>
         </Border.Effect>
 
-        <StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
             <Image Name="ProfileImage"
                    Source="/Resourses/user-circle.png"
-                   Height="100"
-                   Margin="0 20"
+                   Grid.Column="1"
+                   Grid.Row="1"
                    HorizontalAlignment="Center"
                    MouseDown="ImageAwesome_MouseDown_1"/>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Name="SurnameTextBox" Margin="5 10" FontSize="25" Text="{Binding Path=Sourse.Person.Surname, Source={x:Static cs:CurrentSession.CurrentCurator}}"/>
-                <TextBlock Name="NameTextBox" Margin="5 10" FontSize="25" Text="{Binding Path=Sourse.Person.Name, Source={x:Static cs:CurrentSession.CurrentCurator}}"/>
-                <TextBlock Name="PatronymicTextBox" Margin="5 10" FontSize="25" Text="{Binding Path=Sourse.Person.Patronymic, Source={x:Static cs:CurrentSession.CurrentCurator}}"/>
+            <Image Source="/Resourses/bg_for_avatar.png"
+                   Grid.Column="1"
+                   Grid.Row="1"
+                   MouseDown="ImageAwesome_MouseDown_1"/>
+
+            <StackPanel 
+                Grid.Row="2"
+                Grid.ColumnSpan="3">
+
+                
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Name="SurnameTextBox" Margin="5 10" FontSize="25" Text="{Binding Path=Sourse.Person.Surname, Source={x:Static cs:CurrentSession.CurrentCurator}}"/>
+                    <TextBlock Name="NameTextBox" Margin="5 10" FontSize="25" Text="{Binding Path=Sourse.Person.Name, Source={x:Static cs:CurrentSession.CurrentCurator}}"/>
+                    <TextBlock Name="PatronymicTextBox" Margin="5 10" FontSize="25" Text="{Binding Path=Sourse.Person.Patronymic, Source={x:Static cs:CurrentSession.CurrentCurator}}"/>
+                </StackPanel>
+
+                <TextBlock HorizontalAlignment="Center"
+               Name="CategoryTextBlock"
+               Text="{Binding Path=TeacherCategory.Name, Source={x:Static cs:CurrentSession.CurrentCurator}}"
+               FontSize="25"/>
+
+                <fa:ImageAwesome Icon="SignOut"
+                     Height="30"
+                     HorizontalAlignment="Right"
+                     Margin="20"
+                     Foreground="#ff5e5e"
+                     MouseDown="ImageAwesome_MouseDown"/>
+
             </StackPanel>
 
-            <TextBlock HorizontalAlignment="Center"
-                       Name="CategoryTextBlock"
-                       Text="{Binding Path=TeacherCategory.Name, Source={x:Static cs:CurrentSession.CurrentCurator}}"
-                       FontSize="25"/>
-
-            <fa:ImageAwesome Icon="SignOut"
-                             Height="30"
-                             HorizontalAlignment="Right"
-                             Margin="20"
-                             Foreground="#ff5e5e"
-                             MouseDown="ImageAwesome_MouseDown"/>
-
-        </StackPanel>
+        </Grid>
 
     </Border>
 </Page>
